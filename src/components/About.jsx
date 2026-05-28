@@ -1,5 +1,3 @@
-import React from 'react';
-
 const About = ({ company }) => {
   return (
     <section id="about" className="py-24 bg-white overflow-hidden">

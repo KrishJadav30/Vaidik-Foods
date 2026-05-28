@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Header = ({ company }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

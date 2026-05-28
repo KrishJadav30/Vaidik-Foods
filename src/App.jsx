@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -24,15 +24,15 @@ function App() {
   if (loading) {
     return (
       <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Plus Jakarta Sans' }}>
-        <h2 style={{ color: 'var(--primary)' }}>Loading Vaidik Foods...</h2>
+        <h2 style={{ color: 'var(--color-primary)' }}>Loading Vaidik Foods...</h2>
       </div>
     );
   }
 
   return (
-    <div className="App">
+    <div className="App min-h-screen flex flex-col">
       <Header company={data.company} />
-      <main>
+      <main className="flex-grow">
         <Hero company={data.company} />
         <About company={data.company} />
         <Products products={data.products} />

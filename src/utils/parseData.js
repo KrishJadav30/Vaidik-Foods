@@ -19,7 +19,7 @@ export const parseData = async () => {
         const matches = content.match(/\[(.*?)\]\s*(.*)/g);
         if (matches) {
           matches.forEach(match => {
-            const [_, key, value] = match.match(/\[(.*?)\]\s*(.*)/);
+            const [, key, value] = match.match(/\[(.*?)\]\s*(.*)/);
             data.company[key.toLowerCase()] = value.trim();
           });
         }
@@ -31,7 +31,7 @@ export const parseData = async () => {
           lines.forEach(line => {
             const match = line.match(/\[(.*?)\]\s*(.*)/);
             if (match) {
-              const [_, key, value] = match;
+              const [, key, value] = match;
               product[key.toLowerCase().trim()] = value.trim();
             }
           });

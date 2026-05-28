@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Hero = ({ company }) => {
   return (
     <section id="home" className="pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">

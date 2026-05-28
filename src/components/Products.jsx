@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Products = ({ products }) => {
   const [activeCategory, setActiveCategory] = useState('All');
