@@ -9,12 +9,12 @@ const About = ({ company }) => {
           <div style={{ width: '80px', height: '4px', background: 'var(--primary)', margin: '0 auto' }}></div>
         </div>
         
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
-          <div>
+        <div className="grid-2">
+          <div className="hero-text">
             <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
               {company.about || 'Loading company profile...'}
             </p>
-            <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+            <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
               <div>
                 <h4 style={{ color: 'var(--primary)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Global Exports</h4>
                 <p style={{ fontSize: '0.9rem' }}>Supplying premium food ingredients to over 15+ countries across Europe and USA.</p>
@@ -25,7 +25,7 @@ const About = ({ company }) => {
               </div>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }} className="mobile-hide">
             <img 
               src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=500&auto=format&fit=crop" 
               alt="Quality Control" 

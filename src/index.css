@@ -58,6 +58,49 @@ button {
   padding: 6rem 0;
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  h1 {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .nav-links {
+    display: none !important;
+  }
+  
+  .hero-text {
+    text-align: center;
+  }
+  
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
 .btn {
   padding: 0.8rem 2rem;
   border-radius: 50px;

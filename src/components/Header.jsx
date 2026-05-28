@@ -13,7 +13,7 @@ const Header = ({ company }) => {
           </span>
         </div>
         
-        <nav style={{ display: 'flex', gap: '2rem', fontWeight: '500' }}>
+        <nav className="nav-links" style={{ display: 'flex', gap: '2rem', fontWeight: '500' }}>
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#products">Products</a>
@@ -21,7 +21,7 @@ const Header = ({ company }) => {
         </nav>
 
         <a href={`tel:${company.phone}`} className="btn btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.9rem' }}>
-          Call Now
+          Call
         </a>
       </div>
     </header>

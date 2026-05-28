@@ -1,6 +1,6 @@
 export const parseData = async () => {
   try {
-    const response = await fetch('/data.txt');
+    const response = await fetch('./data.txt');
     const text = await response.text();
 
     const sections = text.split('#').filter(s => s.trim());
