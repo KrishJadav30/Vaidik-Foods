@@ -6,21 +6,21 @@ const Testimonials = () => {
     {
       name: "David Chen",
       role: "Sourcing Director, Global Foods (USA)",
-      content: "The quality of dehydrated onions from Vaidik Foods is unmatched. Their consistency and attention to export standards make them our primary partner in India.",
+      content: "The quality of dried onions from Vaidik Foods is the best. Their consistent quality makes them our main partner in India.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Ahmed Al-Farsi",
       role: "Operations Manager, Spice House (Dubai)",
-      content: "Excellent service and premium quality spices. The spray-dried powders retain incredible flavor and color. Highly recommended for industrial applications.",
+      content: "Great service and high-quality spices. The powders have amazing flavor and color. I highly recommend them for any business.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Sarah Müller",
       role: "Quality Lead, BioFoods (Germany)",
-      content: "Vaidik Foods understands European food safety requirements perfectly. Their documentation and lab reports are always thorough and reliable.",
+      content: "Vaidik Foods knows exactly what we need for food safety. Their reports are always detailed and trustworthy.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
     }
@@ -35,10 +35,10 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Global Trust</span>
-          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">What Our Clients Say</h2>
+          <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Customers</span>
+          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">What People Say</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            We take pride in building long-term relationships with food industry leaders across the globe through consistent excellence.
+            We are proud to work with food leaders around the world by always providing the best products.
           </p>
         </motion.div>
 

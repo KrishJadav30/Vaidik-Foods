@@ -19,10 +19,10 @@ const Products = ({ products }) => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Catalog</span>
-          <h3 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">Premium Ingredients</h3>
+          <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Products</span>
+          <h3 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">High-Quality Ingredients</h3>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Hygienically processed and packed to preserve the natural goodness of Indian agriculture, delivered with excellence to your doorstep.
+            Cleanly made and packed to keep the natural taste. We deliver the best farm products to your door.
           </p>
         </motion.div>
 
@@ -88,7 +88,7 @@ const Products = ({ products }) => {
                     
                     <div className="pt-8 border-t border-gray-50 flex items-center justify-between">
                       <div className="flex flex-col">
-                        <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-black mb-1">Indicative Price</span>
+                        <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-black mb-1">Price</span>
                         <span className="text-3xl font-black text-gray-900 tracking-tight">{product.price}</span>
                       </div>
                       <button className="bg-gray-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center hover:bg-primary transition-all duration-500 hover:shadow-xl hover:shadow-primary/30 group-hover:rotate-6">
@@ -106,7 +106,7 @@ const Products = ({ products }) => {
               >
                 <div className="bg-gray-50 rounded-[40px] p-12 border-2 border-dashed border-gray-100">
                   <ShoppingBag size={48} className="mx-auto text-gray-200 mb-4" />
-                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">No products found in this category</p>
+                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">No products here yet</p>
                 </div>
               </motion.div>
             )}

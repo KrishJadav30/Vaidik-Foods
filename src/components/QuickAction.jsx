@@ -57,7 +57,7 @@ const QuickAction = ({ company }) => {
                 </div>
                 <div>
                   <p className="font-bold text-sm">Send Email</p>
-                  <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">For Bulk Inquiries</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">For Large Orders</p>
                 </div>
               </a>
             </div>

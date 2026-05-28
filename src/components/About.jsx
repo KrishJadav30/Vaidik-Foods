@@ -36,7 +36,7 @@ const About = ({ company }) => {
                   className="bg-primary p-10 rounded-[40px] text-white text-center shadow-xl shadow-primary/20"
                 >
                   <p className="text-5xl font-black mb-2">10+</p>
-                  <p className="text-xs uppercase tracking-[0.2em] font-bold opacity-80">Years Excellence</p>
+                  <p className="text-xs uppercase tracking-[0.2em] font-bold opacity-80">Years Experience</p>
                 </motion.div>
               </div>
               <div className="space-y-6">
@@ -45,7 +45,7 @@ const About = ({ company }) => {
                   className="bg-accent p-10 rounded-[40px] text-white text-center aspect-square flex flex-col justify-center shadow-xl shadow-accent/20"
                 >
                   <p className="text-5xl font-black mb-2">100%</p>
-                  <p className="text-xs uppercase tracking-[0.2em] font-bold opacity-80">Export Quality</p>
+                  <p className="text-xs uppercase tracking-[0.2em] font-bold opacity-80">Top Quality</p>
                 </motion.div>
                 <motion.img 
                   variants={fadeIn}
@@ -65,20 +65,20 @@ const About = ({ company }) => {
             className="lg:w-1/2"
           >
             <motion.div variants={fadeIn} className="mb-10">
-              <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Legacy</span>
+              <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our History</span>
               <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Pioneering Dehydrated Nutrition in Mahuva
+                Supplying the Best Dried Foods in Mahuva
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed italic border-l-4 border-primary pl-8 py-4 bg-primary/5 rounded-r-[32px]">
-                "{company.about || 'Vaidik Foods brings you the finest selection of agricultural products processed with cutting-edge technology while preserving traditional integrity.'}"
+                "{company.about || 'We offer the best farm products made with modern machines while keeping our traditional ways.'}"
               </p>
             </motion.div>
             
             <div className="space-y-8">
               {[
-                { title: 'Traditional Roots', desc: 'Our processing methods are inspired by Vedic principles of preservation.', icon: <History className="text-primary" size={28} /> },
-                { title: 'Global Standards', desc: 'ISO, HACCP, and global food safety protocols strictly followed.', icon: <Globe2 className="text-primary" size={28} /> },
-                { title: 'Farmer First', desc: 'We work directly with local growers to ensure fair trade and fresh harvest.', icon: <Users2 className="text-primary" size={28} /> }
+                { title: 'Traditional Ways', desc: 'We use traditional methods to keep our food fresh and healthy.', icon: <History className="text-primary" size={28} /> },
+                { title: 'Safe and Clean', desc: 'We follow all safety rules to make sure our food is clean and safe.', icon: <Globe2 className="text-primary" size={28} /> },
+                { title: 'Helping Farmers', desc: 'We work directly with local farmers to get the freshest products.', icon: <Users2 className="text-primary" size={28} /> }
               ].map((item, i) => (
                 <motion.div 
                   key={i} 

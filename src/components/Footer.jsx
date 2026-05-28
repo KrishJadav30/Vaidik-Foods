@@ -24,7 +24,7 @@ const Footer = ({ company }) => {
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-10 text-lg">
-              Pioneers in the dehydrated food industry, bringing the purity of Vedic nutrition to global markets with modern safety standards.
+              We are experts in dried foods, bringing natural and safe ingredients to the whole world.
             </p>
             <div className="flex gap-4">
               {[
@@ -50,7 +50,7 @@ const Footer = ({ company }) => {
               <span className="w-8 h-px bg-primary"></span> Quick Links
             </h4>
             <ul className="space-y-5 text-gray-400 text-lg">
-              {['Home Experience', 'Our Legacy', 'Premium Catalog', 'Get in Touch'].map((item) => (
+              {['Home', 'About Us', 'Products', 'Contact'].map((item) => (
                 <li key={item}>
                   <a href={`#${item.toLowerCase().split(' ')[0]}`} className="hover:text-white transition-all duration-300 flex items-center gap-2 group">
                     <ArrowRight size={16} className="text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -76,7 +76,7 @@ const Footer = ({ company }) => {
                   <Phone size={20} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-white font-bold mb-1">Phone Number</p>
+                  <p className="text-white font-bold mb-1">Phone</p>
                   <p className="text-lg">{company.phone}</p>
                 </div>
               </li>
@@ -85,7 +85,7 @@ const Footer = ({ company }) => {
                   <Mail size={20} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-white font-bold mb-1">Email Address</p>
+                  <p className="text-white font-bold mb-1">Email</p>
                   <p className="text-lg">{company.email}</p>
                 </div>
               </li>
@@ -94,7 +94,7 @@ const Footer = ({ company }) => {
                   <MapPin size={20} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-white font-bold mb-1">Headquarters</p>
+                  <p className="text-white font-bold mb-1">Office</p>
                   <p className="text-lg">{company.address}</p>
                 </div>
               </li>
@@ -110,11 +110,11 @@ const Footer = ({ company }) => {
             <h4 className="text-xl font-bold mb-10 flex items-center gap-3">
               <span className="w-8 h-px bg-primary"></span> Newsletter
             </h4>
-            <p className="text-gray-400 mb-8 text-lg">Stay updated with our latest product launches and seasonal offers.</p>
+            <p className="text-gray-400 mb-8 text-lg">Get updates on our new products and offers.</p>
             <form className="relative group">
               <input 
                 type="email" 
-                placeholder="Your email address" 
+                placeholder="Enter your email" 
                 className="w-full bg-[#151515] border border-gray-800 rounded-[24px] py-5 px-8 focus:outline-none focus:border-primary transition-all duration-300 text-white placeholder:text-gray-600"
               />
               <button className="absolute right-2 top-2 bottom-2 bg-primary px-8 rounded-[18px] hover:bg-primary-light transition-all duration-300 font-bold flex items-center justify-center shadow-lg shadow-primary/20">
@@ -125,7 +125,7 @@ const Footer = ({ company }) => {
         </div>
         
         <div className="pt-12 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-8 text-gray-500 text-sm font-medium tracking-wide">
-          <p>© {new Date().getFullYear()} {company.name}. All Rights Reserved. Crafted for Culinary Excellence.</p>
+          <p>© {new Date().getFullYear()} {company.name}. All Rights Reserved. Made for great cooking.</p>
           <div className="flex gap-10">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

@@ -12,17 +12,17 @@ const Contact = ({ company }) => {
             viewport={{ once: true }}
             className="lg:w-2/5"
           >
-            <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Get In Touch</span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">Let's Discuss Your Needs</h2>
+            <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Contact Us</span>
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">How Can We Help?</h2>
             <p className="text-gray-600 text-xl leading-relaxed mb-12">
-              Whether you're looking for a bulk supply or customized processing, our team is ready to provide the best solutions.
+              Whether you need a large order or special processing, we are here to help you.
             </p>
             
             <div className="space-y-8">
               {[
-                { icon: <Phone className="text-primary" />, title: "Call Us", detail: company.phone, sub: "Mon-Sat, 9AM-7PM IST" },
-                { icon: <Mail className="text-primary" />, title: "Email Us", detail: company.email, sub: "24/7 Response Rate" },
-                { icon: <MapPin className="text-primary" />, title: "Visit Us", detail: company.address, sub: "Global Headquarters" }
+                { icon: <Phone className="text-primary" />, title: "Call Us", detail: company.phone, sub: "Mon-Sat, 9AM-7PM" },
+                { icon: <Mail className="text-primary" />, title: "Email Us", detail: company.email, sub: "We respond quickly" },
+                { icon: <MapPin className="text-primary" />, title: "Visit Us", detail: company.address, sub: "Main Office" }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -86,7 +86,7 @@ const Contact = ({ company }) => {
                   <label className="text-sm font-bold uppercase tracking-widest text-gray-500 ml-2">Your Message</label>
                   <textarea 
                     rows="4" 
-                    placeholder="Tell us about your requirements..."
+                    placeholder="Tell us what you need..."
                     className="w-full bg-white rounded-[32px] py-6 px-8 border border-gray-100 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all duration-300 text-lg resize-none"
                   ></textarea>
                 </div>

@@ -4,38 +4,38 @@ import { ShieldCheck, Truck, Zap, Award, ThumbsUp, Leaf } from 'lucide-react';
 const Features = () => {
   const features = [
     {
-      title: "Quality Assurance",
-      desc: "Strict adherence to ISO 22000 and HACCP standards for every batch we produce.",
+      title: "Guaranteed Quality",
+      desc: "We follow high safety standards for every product we make.",
       icon: <ShieldCheck size={32} className="text-primary" />,
       color: "bg-blue-50"
     },
     {
-      title: "Global Logistics",
-      desc: "Efficient export network reaching over 15 countries with timely delivery.",
+      title: "Worldwide Delivery",
+      desc: "We ship to over 15 countries and always deliver on time.",
       icon: <Truck size={32} className="text-primary" />,
       color: "bg-green-50"
     },
     {
-      title: "Vedic Processing",
-      desc: "Ancient wisdom meets modern technology to retain maximum nutritional value.",
+      title: "Natural Methods",
+      desc: "We use both old and new ways to keep our food healthy.",
       icon: <Zap size={32} className="text-primary" />,
       color: "bg-yellow-50"
     },
     {
-      title: "Premium Sourcing",
-      desc: "Direct partnership with local farmers ensures the freshest raw materials.",
+      title: "Fresh Ingredients",
+      desc: "We work with local farmers to get the freshest ingredients.",
       icon: <Leaf size={32} className="text-primary" />,
       color: "bg-orange-50"
     },
     {
-      title: "Customized Solutions",
-      desc: "Bespoke processing and packaging according to specific client requirements.",
+      title: "Custom Orders",
+      desc: "We can process and pack products exactly how you need them.",
       icon: <Award size={32} className="text-primary" />,
       color: "bg-purple-50"
     },
     {
-      title: "Sustainable Practices",
-      desc: "Eco-friendly processing methods that minimize waste and environmental impact.",
+      title: "Eco-Friendly",
+      desc: "We use methods that are good for the planet and reduce waste.",
       icon: <ThumbsUp size={32} className="text-primary" />,
       color: "bg-red-50"
     }
@@ -64,9 +64,9 @@ const Features = () => {
           className="text-center mb-20"
         >
           <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Why Choose Us</span>
-          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">The Vaidik Advantage</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">Why We Are Different</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            What sets us apart is our commitment to quality, tradition, and our clients' success in the global marketplace.
+            We care about quality, our traditions, and helping our customers succeed around the world.
           </p>
         </motion.div>
 

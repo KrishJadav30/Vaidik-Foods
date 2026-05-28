@@ -45,21 +45,21 @@ const Hero = ({ company }) => {
               className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-[0.2em] text-xs mb-6 bg-primary/10 px-4 py-2 rounded-full"
             >
               <Leaf size={14} className="animate-pulse" />
-              Authentic Indian Flavors
+              Real Indian Flavors
             </motion.span>
             
             <motion.h1 
               variants={itemVariants}
               className="text-5xl lg:text-7xl font-bold text-gray-900 leading-[1.1] mb-8"
             >
-              {company.tagline || 'Pure. Authentic. Sustainable.'}
+              {company.tagline || 'Pure. Natural. Simple.'}
             </motion.h1>
             
             <motion.p 
               variants={itemVariants}
               className="text-lg lg:text-xl text-gray-600 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Experience the true essence of Vedic nutrition with our premium range of dehydrated vegetables and authentic spices.
+              Enjoy healthy and natural food with our high-quality dried vegetables and spices.
             </motion.p>
             
             <motion.div 
@@ -67,11 +67,11 @@ const Hero = ({ company }) => {
               className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
             >
               <a href="#products" className="btn btn-primary text-lg flex items-center justify-center gap-3 px-10">
-                Explore Catalog
+                View Products
                 <ArrowRight size={20} />
               </a>
               <a href="#about" className="btn btn-outline text-lg">
-                Our Story
+                About Us
               </a>
             </motion.div>
             
@@ -82,7 +82,7 @@ const Hero = ({ company }) => {
               {[
                 { label: 'Natural', value: '100%', icon: <Leaf size={20} className="text-primary" /> },
                 { label: 'Countries', value: '15+', icon: <Globe size={20} className="text-primary" /> },
-                { label: 'Certified', value: 'ISO', icon: <ShieldCheck size={20} className="text-primary" /> },
+                { label: 'Quality', value: 'ISO', icon: <ShieldCheck size={20} className="text-primary" /> },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start group">
                   <div className="flex items-center gap-2 mb-1">

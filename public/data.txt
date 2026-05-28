@@ -1,44 +1,44 @@
 # COMPANY
 [Name] Vaidik Foods
-[Tagline] Pure. Authentic. Sustainable.
+[Tagline] Pure. Natural. Simple.
 [Phone] +91 98765 43210
 [Email] info@vaidikfoods.com
 [Address] 123 Heritage Lane, Mahuva, Gujarat, India - 364290
-[About] Vaidik Foods is a premier manufacturer and exporter of high-quality dehydrated vegetables, spray-dried powders, and premium Indian spices. Rooted in traditional Vedic values and modern food safety standards, we deliver the finest ingredients to global markets.
+[About] We make and export high-quality dried vegetables and spices. We follow traditional ways and modern safety rules to bring you the best ingredients from India.
 
 # PRODUCTS
-[Name] Dehydrated White Onion Flakes
-[Category] Dehydrated Vegetables
+[Name] Dried White Onion Flakes
+[Category] Dried Vegetables
 [Price] ₹380.00/kg
-[Description] Premium quality Mahuva white onions, hygienically processed to retain natural aroma and taste.
+[Description] Top-quality white onions from Mahuva, dried carefully to keep their natural smell and taste.
 [Image] https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?q=80&w=1000&auto=format&fit=crop
 ---
 [Name] Red Chilli Powder (Extra Spicy)
 [Category] Spices
 [Price] ₹320.00/kg
-[Description] Fine ground red chilli with high pungency and deep red color, perfect for culinary excellence.
+[Description] Finely ground red chilli that is very spicy and has a deep red color. Perfect for all your cooking.
 [Image] https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=1000&auto=format&fit=crop
 ---
-[Name] Spray Dried Tomato Powder
+[Name] Tomato Powder
 [Category] Fruit Powders
 [Price] ₹520.00/kg
-[Description] 100% natural tomato powder processed using advanced spray drying technology to preserve nutrients.
+[Description] 100% natural tomato powder made with advanced drying methods to keep all the nutrients.
 [Image] https://images.unsplash.com/photo-1591189863430-ab87e120f312?q=80&w=1000&auto=format&fit=crop
 ---
-[Name] Dehydrated Garlic Granules
-[Category] Dehydrated Vegetables
+[Name] Dried Garlic Granules
+[Category] Dried Vegetables
 [Price] ₹460.00/kg
-[Description] Crisp and aromatic garlic granules, ideal for seasoning, soups, and industrial food applications.
+[Description] Crunchy and aromatic garlic pieces. Great for soups, seasoning, and many other dishes.
 [Image] https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?q=80&w=1000&auto=format&fit=crop
 ---
-[Name] Turmeric Powder (Curcumin 3%+)
+[Name] Turmeric Powder
 [Category] Spices
 [Price] ₹350.00/kg
-[Description] High curcumin turmeric powder sourced from the best farms, known for its medicinal and culinary properties.
+[Description] Pure turmeric powder from the best farms. It is healthy and adds great flavor to food.
 [Image] https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1000&auto=format&fit=crop
 ---
-[Name] Dehydrated Green Chilli Powder
-[Category] Dehydrated Vegetables
+[Name] Dried Green Chilli Powder
+[Category] Dried Vegetables
 [Price] ₹590.00/kg
-[Description] Concentrated green chilli powder, providing a sharp heat and fresh flavor to any dish.
+[Description] Strong green chilli powder that adds fresh heat and flavor to any meal.
 [Image] https://images.unsplash.com/photo-1588276552401-30058a0fe57b?q=80&w=1000&auto=format&fit=crop
