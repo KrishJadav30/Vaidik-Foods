@@ -2,45 +2,97 @@ import React from 'react';
 
 const Footer = ({ company }) => {
   return (
-    <footer id="contact" className="section" style={{ background: '#1a1a1a', color: 'white' }}>
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '4rem' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-              <div style={{ background: 'var(--primary)', width: '32px', height: '32px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
+    <footer id="contact" className="bg-gray-900 pt-24 pb-12 text-white overflow-hidden relative">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+          <div className="col-span-1 lg:col-span-1">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="bg-primary w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-xl">
                 V
               </div>
-              <span style={{ fontSize: '1.5rem', fontWeight: '700', letterSpacing: '-0.5px' }}>
+              <span className="text-2xl font-bold tracking-tight">
                 {company.name}
               </span>
             </div>
-            <p style={{ color: '#999', fontSize: '0.95rem', lineHeight: '1.8' }}>
-              Bringing the purest essence of Indian agriculture to your doorstep with modern processing and traditional values.
+            <p className="text-gray-400 leading-relaxed mb-8">
+              Pioneers in the dehydrated food industry, bringing the purity of Vedic nutrition to global markets since inception.
             </p>
+            <div className="flex gap-4">
+              {['𝕏', 'ƒ', 'in', 'ig'].map(soc => (
+                <a key={soc} href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-primary hover:text-primary transition-all">
+                  {soc}
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
-            <h4 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.5rem' }}>Quick Links</h4>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', color: '#999' }}>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#contact">Contact</a></li>
+            <h4 className="text-lg font-bold mb-8 flex items-center gap-2">
+              <span className="w-6 h-px bg-primary"></span> Navigation
+            </h4>
+            <ul className="space-y-4 text-gray-400">
+              <li><a href="#home" className="hover:text-white transition-colors">Home Experience</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">Our Legacy</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Premium Catalog</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Get in Touch</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.5rem' }}>Contact Us</h4>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: '#999' }}>
-              <li><strong>Phone:</strong> {company.phone}</li>
-              <li><strong>Email:</strong> {company.email}</li>
-              <li><strong>Address:</strong> {company.address}</li>
+            <h4 className="text-lg font-bold mb-8 flex items-center gap-2">
+              <span className="w-6 h-px bg-primary"></span> Contact Details
+            </h4>
+            <ul className="space-y-6 text-gray-400">
+              <li className="flex gap-4">
+                <span className="text-primary text-xl">📞</span>
+                <div>
+                  <p className="text-white font-medium">Phone Number</p>
+                  <p>{company.phone}</p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <span className="text-primary text-xl">✉️</span>
+                <div>
+                  <p className="text-white font-medium">Email Address</p>
+                  <p>{company.email}</p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <span className="text-primary text-xl">📍</span>
+                <div>
+                  <p className="text-white font-medium">Headquarters</p>
+                  <p>{company.address}</p>
+                </div>
+              </li>
             </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold mb-8 flex items-center gap-2">
+              <span className="w-6 h-px bg-primary"></span> Newsletter
+            </h4>
+            <p className="text-gray-400 mb-6">Subscribe to receive updates on new product launches.</p>
+            <form className="relative">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="w-full bg-gray-800 border border-gray-700 rounded-2xl py-4 px-6 focus:outline-none focus:border-primary transition-colors text-white"
+              />
+              <button className="absolute right-2 top-2 bottom-2 bg-primary px-6 rounded-xl hover:bg-primary-light transition-colors font-bold">
+                →
+              </button>
+            </form>
           </div>
         </div>
         
-        <div style={{ marginTop: '5rem', paddingTop: '2rem', borderTop: '1px solid #333', textAlign: 'center', color: '#666', fontSize: '0.9rem' }}>
-          <p>© {new Date().getFullYear()} {company.name}. All rights reserved. Made with ❤️ for Nature.</p>
+        <div className="pt-12 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm">
+          <p>© {new Date().getFullYear()} {company.name}. Crafted for Culinary Excellence.</p>
+          <div className="flex gap-8">
+            <a href="#" className="hover:text-white">Privacy Policy</a>
+            <a href="#" className="hover:text-white">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
