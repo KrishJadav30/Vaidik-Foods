@@ -1,6 +1,7 @@
 export const parseData = async () => {
   try {
-    const response = await fetch('./data.txt');
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const response = await fetch(`${baseUrl}data.txt`);
     const text = await response.text();
 
     const sections = text.split('#').filter(s => s.trim());
