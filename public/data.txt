@@ -3,7 +3,7 @@
 [Tagline] Pure. Natural. Simple.
 [Phone] +91 98765 43210
 [Email] info@vaidikfoods.com
-[Address] 123 Heritage Lane, Mahuva, Gujarat, India - 364290
+[Address] 123 Heritage Lane, Mahuva, Gujarat, India - 380020
 [About] We make and export high-quality dried vegetables and spices. We follow traditional ways and modern safety rules to bring you the best ingredients from India.
 
 # PRODUCTS
