@@ -1,0 +1,44 @@
+# COMPANY
+[Name] Vaidik Foods
+[Tagline] Pure. Authentic. Sustainable.
+[Phone] +91 98765 43210
+[Email] info@vaidikfoods.com
+[Address] 123 Heritage Lane, Mahuva, Gujarat, India - 364290
+[About] Vaidik Foods is a premier manufacturer and exporter of high-quality dehydrated vegetables, spray-dried powders, and premium Indian spices. Rooted in traditional Vedic values and modern food safety standards, we deliver the finest ingredients to global markets.
+
+# PRODUCTS
+[Name] Dehydrated White Onion Flakes
+[Category] Dehydrated Vegetables
+[Price] $4.50/kg
+[Description] Premium quality Mahuva white onions, hygienically processed to retain natural aroma and taste.
+[Image] https://images.unsplash.com/photo-1580148123124-bbec33f61536?q=80&w=1000&auto=format&fit=crop
+---
+[Name] Red Chilli Powder (Extra Spicy)
+[Category] Spices
+[Price] $3.80/kg
+[Description] Fine ground red chilli with high pungency and deep red color, perfect for culinary excellence.
+[Image] https://images.unsplash.com/photo-1599307767316-776533da941c?q=80&w=1000&auto=format&fit=crop
+---
+[Name] Spray Dried Tomato Powder
+[Category] Fruit Powders
+[Price] $6.20/kg
+[Description] 100% natural tomato powder processed using advanced spray drying technology to preserve nutrients.
+[Image] https://images.unsplash.com/photo-1590779033100-9f60705a2f3b?q=80&w=1000&auto=format&fit=crop
+---
+[Name] Dehydrated Garlic Granules
+[Category] Dehydrated Vegetables
+[Price] $5.50/kg
+[Description] Crisp and aromatic garlic granules, ideal for seasoning, soups, and industrial food applications.
+[Image] https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?q=80&w=1000&auto=format&fit=crop
+---
+[Name] Turmeric Powder (Curcumin 3%+)
+[Category] Spices
+[Price] $4.20/kg
+[Description] High curcumin turmeric powder sourced from the best farms, known for its medicinal and culinary properties.
+[Image] https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1000&auto=format&fit=crop
+---
+[Name] Dehydrated Green Chilli Powder
+[Category] Dehydrated Vegetables
+[Price] $7.00/kg
+[Description] Concentrated green chilli powder, providing a sharp heat and fresh flavor to any dish.
+[Image] https://images.unsplash.com/photo-1588276552401-30058a0fe57b?q=80&w=1000&auto=format&fit=crop
