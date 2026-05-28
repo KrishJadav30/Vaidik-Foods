@@ -2,42 +2,44 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Features from './components/Features';
 import Products from './components/Products';
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
+import QuickAction from './components/QuickAction';
 import { parseData } from './utils/parseData';
 
 function App() {
   const [data, setData] = useState({ company: {}, products: [] });
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
-      const parsed = await parseData();
-      if (parsed) {
-        setData(parsed);
+      try {
+        const parsed = await parseData();
+        if (parsed) {
+          setData(parsed);
+        }
+      } catch (err) {
+        console.error('Failed to load data:', err);
       }
-      setLoading(false);
     };
     loadData();
   }, []);
 
-  if (loading) {
-    return (
-      <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Plus Jakarta Sans' }}>
-        <h2 style={{ color: 'var(--color-primary)' }}>Loading Vaidik Foods...</h2>
-      </div>
-    );
-  }
-
   return (
-    <div className="App min-h-screen flex flex-col">
+    <div className="App selection:bg-primary/10 selection:text-primary min-h-screen flex flex-col">
       <Header company={data.company} />
       <main className="flex-grow">
         <Hero company={data.company} />
         <About company={data.company} />
+        <Features />
         <Products products={data.products} />
+        <Testimonials />
+        <Contact company={data.company} />
       </main>
       <Footer company={data.company} />
+      <QuickAction company={data.company} />
     </div>
   );
 }

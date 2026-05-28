@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, ArrowUpRight, ShoppingBag } from 'lucide-react';
 
 const Products = ({ products }) => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -9,70 +11,111 @@ const Products = ({ products }) => {
     : products.filter(p => p.category === activeCategory);
 
   return (
-    <section id="products" className="py-24 bg-[#f8f9fa]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4">Our Catalog</h2>
-          <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Premium Ingredients</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Hygienically processed and packed to preserve the natural goodness of Indian agriculture.
+    <section id="products" className="section-padding bg-[#f8f9fa] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Catalog</span>
+          <h3 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">Premium Ingredients</h3>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            Hygienically processed and packed to preserve the natural goodness of Indian agriculture, delivered with excellence to your doorstep.
           </p>
-        </div>
+        </motion.div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-4 mb-16"
+        >
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 border ${
+              className={`px-8 py-3 rounded-full font-bold transition-all duration-500 border-2 text-sm uppercase tracking-widest ${
                 activeCategory === cat 
-                ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20' 
-                : 'bg-white text-gray-600 border-gray-200 hover:border-primary hover:text-primary'
+                ? 'bg-primary text-white border-primary shadow-xl shadow-primary/30' 
+                : 'bg-white text-gray-500 border-gray-100 hover:border-primary hover:text-primary shadow-sm'
               }`}
             >
               {cat}
             </button>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product, index) => (
-            <div key={index} className="group bg-white rounded-[32px] overflow-hidden border border-gray-100 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 flex flex-col">
-              <div className="relative h-72 overflow-hidden">
-                <img 
-                  src={product.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop'} 
-                  alt={product.name} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-1 rounded-full text-xs font-bold text-primary shadow-sm uppercase tracking-wider">
-                  {product.category}
-                </div>
-              </div>
-              
-              <div className="p-8 flex flex-col flex-grow">
-                <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                  {product.name}
-                </h4>
-                <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-                  {product.description}
-                </p>
-                <div className="flex items-center justify-between pt-6 border-t border-gray-50 mt-auto">
-                  <div className="flex flex-col">
-                    <span className="text-xs text-gray-400 uppercase tracking-widest font-bold">Price Range</span>
-                    <span className="text-2xl font-black text-gray-900">{product.price}</span>
+        <motion.div 
+          layout
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
+          <AnimatePresence mode='popLayout'>
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <motion.div 
+                  key={product.name}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  className="group bg-white rounded-[48px] overflow-hidden border border-gray-100 hover:border-primary/20 transition-all duration-500 hover:shadow-premium flex flex-col h-full"
+                >
+                  <div className="relative h-80 overflow-hidden m-4 rounded-[40px]">
+                    <img 
+                      src={product.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop'} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                    <div className="absolute top-6 right-6 glass px-5 py-2 rounded-full text-[10px] font-black text-primary shadow-sm uppercase tracking-[0.2em]">
+                      {product.category}
+                    </div>
                   </div>
-                  <button className="bg-gray-900 text-white p-4 rounded-2xl hover:bg-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 group-hover:rotate-12">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.827-1.233L3 21l1.657-4.586C3.412 14.796 3 12.819 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                  </button>
+                  
+                  <div className="p-10 flex flex-col flex-grow">
+                    <div className="flex justify-between items-start mb-4">
+                      <h4 className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors pr-4">
+                        {product.name}
+                      </h4>
+                      <ArrowUpRight className="text-gray-300 group-hover:text-primary transition-colors shrink-0" />
+                    </div>
+                    <p className="text-gray-500 mb-8 flex-grow leading-relaxed">
+                      {product.description}
+                    </p>
+                    
+                    <div className="pt-8 border-t border-gray-50 flex items-center justify-between">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-black mb-1">Indicative Price</span>
+                        <span className="text-3xl font-black text-gray-900 tracking-tight">{product.price}</span>
+                      </div>
+                      <button className="bg-gray-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center hover:bg-primary transition-all duration-500 hover:shadow-xl hover:shadow-primary/30 group-hover:rotate-6">
+                        <MessageCircle size={24} />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="col-span-full py-20 text-center"
+              >
+                <div className="bg-gray-50 rounded-[40px] p-12 border-2 border-dashed border-gray-100">
+                  <ShoppingBag size={48} className="mx-auto text-gray-200 mb-4" />
+                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">No products found in this category</p>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </div>
+      
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
     </section>
   );
 };
