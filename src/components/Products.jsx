@@ -13,16 +13,36 @@ const WhatsAppIcon = ({ className }) => (
 );
 
 const Products = ({ products, company }) => {
-  const [activeCategory, setActiveCategory] = useState(null); // null means no category selected, hide all
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeSubcategory, setActiveSubcategory] = useState(null);
   
   const whatsappNumber = company.phone ? company.phone.replace(/[^0-9]/g, '') : '919316787170';
   
-  // Extract categories dynamically
+  // Extract main categories dynamically
   const categories = [...new Set(products.map(p => p.category))];
   
+  // Extract subcategories for the active main category
+  const subcategories = activeCategory && activeCategory !== 'All'
+    ? [...new Set(products.filter(p => p.category === activeCategory).map(p => p.subcategory).filter(Boolean))]
+    : [];
+
+  const handleCategoryClick = (cat) => {
+    if (activeCategory === cat) {
+      setActiveCategory(null);
+      setActiveSubcategory(null);
+    } else {
+      setActiveCategory(cat);
+      setActiveSubcategory(null);
+    }
+  };
+
   const filteredProducts = activeCategory === 'All' 
     ? products 
-    : products.filter(p => p.category === activeCategory);
+    : products.filter(p => {
+        const matchesCategory = p.category === activeCategory;
+        const matchesSubcategory = activeSubcategory ? p.subcategory === activeSubcategory : true;
+        return matchesCategory && matchesSubcategory;
+      });
 
   return (
     <section id="products" className="section-padding bg-[#f8f9fa] relative overflow-hidden">
@@ -33,27 +53,27 @@ const Products = ({ products, company }) => {
           viewport={{ once: true }}
           className="text-center mb-16 motion-gpu"
         >
-          <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Products</span>
+          <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Selection</span>
           <h3 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">High-Quality Ingredients</h3>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-10">
-            Cleanly made and packed to keep the natural taste. We deliver the best farm products to your door.
+            Cleanly made and packed to keep the natural taste. We deliver the best farm ingredients to your door.
           </p>
           
           <div className="flex items-center justify-center gap-2 text-primary/60 font-bold uppercase tracking-[0.2em] text-[10px] mb-6 animate-pulse">
             <MousePointerClick size={14} />
-            Click a category to view products
+            Explore our collection below
           </div>
         </motion.div>
 
-        {/* Category Filter */}
+        {/* Main Category Filter */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-16 motion-gpu"
+          className="flex flex-wrap justify-center gap-4 mb-8 motion-gpu"
         >
           <button
-            onClick={() => setActiveCategory(activeCategory === 'All' ? null : 'All')}
+            onClick={() => handleCategoryClick('All')}
             className={`px-8 py-3 rounded-full font-bold transition-all duration-300 border-2 text-sm uppercase tracking-widest ${
               activeCategory === 'All' 
               ? 'bg-primary text-white border-primary shadow-xl shadow-primary/30' 
@@ -65,7 +85,7 @@ const Products = ({ products, company }) => {
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
+              onClick={() => handleCategoryClick(cat)}
               className={`px-8 py-3 rounded-full font-bold transition-all duration-300 border-2 text-sm uppercase tracking-widest ${
                 activeCategory === cat 
                 ? 'bg-primary text-white border-primary shadow-xl shadow-primary/30' 
@@ -76,6 +96,42 @@ const Products = ({ products, company }) => {
             </button>
           ))}
         </motion.div>
+
+        {/* Subcategory Filter */}
+        <AnimatePresence>
+          {subcategories.length > 0 && (
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="flex flex-wrap justify-center gap-3 mb-12 motion-gpu"
+            >
+              <button
+                onClick={() => setActiveSubcategory(null)}
+                className={`px-6 py-2 rounded-full font-bold transition-all duration-300 border text-[10px] uppercase tracking-[0.15em] ${
+                  activeSubcategory === null 
+                  ? 'bg-primary/10 text-primary border-primary/20' 
+                  : 'bg-gray-50 text-gray-400 border-gray-100 hover:border-primary/20 hover:text-primary'
+                }`}
+              >
+                All {activeCategory}
+              </button>
+              {subcategories.map(sub => (
+                <button
+                  key={sub}
+                  onClick={() => setActiveSubcategory(activeSubcategory === sub ? null : sub)}
+                  className={`px-6 py-2 rounded-full font-bold transition-all duration-300 border text-[10px] uppercase tracking-[0.15em] ${
+                    activeSubcategory === sub 
+                    ? 'bg-primary/10 text-primary border-primary/20' 
+                    : 'bg-gray-50 text-gray-400 border-gray-100 hover:border-primary/20 hover:text-primary'
+                  }`}
+                >
+                  {sub}
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.div 
           layout
@@ -149,7 +205,7 @@ const Products = ({ products, company }) => {
               >
                 <div className="bg-gray-50 rounded-[40px] p-12 border-2 border-dashed border-gray-100">
                   <ShoppingBag size={48} className="mx-auto text-gray-200 mb-4" />
-                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">No products found in this category</p>
+                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">No items found in this category</p>
                 </div>
               </motion.div>
             )}

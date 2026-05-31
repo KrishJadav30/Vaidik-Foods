@@ -23,7 +23,7 @@ export const parseData = async () => {
             data.company[key.toLowerCase()] = value.trim();
           });
         }
-      } else if (sectionName === 'PRODUCTS') {
+      } else if (sectionName === 'PRODUCTS' || sectionName === 'SELECTION') {
         const productBlocks = content.split('---');
         productBlocks.forEach(block => {
           const product = {};
@@ -36,6 +36,10 @@ export const parseData = async () => {
             }
           });
           if (Object.keys(product).length > 0) {
+            // Default subcategory if missing
+            if (!product.subcategory) {
+              product.subcategory = '';
+            }
             // Default image fallback
             if (!product.image) {
               product.image = 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000';

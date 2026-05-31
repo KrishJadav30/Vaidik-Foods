@@ -74,7 +74,7 @@ const Hero = ({ company }) => {
               className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center lg:justify-start px-4 md:px-0"
             >
               <a href="#products" className="btn btn-primary text-base md:text-lg flex items-center justify-center gap-3 px-8 md:px-10">
-                View Products
+                View All
                 <ArrowRight size={20} />
               </a>
               <a href="#about" className="btn btn-outline text-base md:text-lg">

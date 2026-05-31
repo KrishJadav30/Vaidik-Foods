@@ -71,7 +71,7 @@ const About = ({ company }) => {
                 Supplying the Best Dried Foods
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed italic border-l-4 border-primary pl-8 py-4 bg-primary/5 rounded-r-[32px]">
-                "{company.about || 'We offer the best farm products made with modern machines while keeping our traditional ways.'}"
+                "{company.about || 'We offer the best farm ingredients made with modern machines while keeping our traditional ways.'}"
               </p>
             </motion.div>
             
@@ -79,7 +79,7 @@ const About = ({ company }) => {
               {[
                 { title: 'Traditional Ways', desc: 'We use traditional methods to keep our food fresh and healthy.', icon: <History className="text-primary" size={28} /> },
                 { title: 'Safe and Clean', desc: 'We follow all safety rules to make sure our food is clean and safe.', icon: <Globe2 className="text-primary" size={28} /> },
-                { title: 'Helping Farmers', desc: 'We work directly with local farmers to get the freshest products.', icon: <Users2 className="text-primary" size={28} /> }
+                { title: 'Helping Farmers', desc: 'We work directly with local farmers to get the freshest ingredients.', icon: <Users2 className="text-primary" size={28} /> }
               ].map((item, i) => (
                 <motion.div 
                   key={i} 

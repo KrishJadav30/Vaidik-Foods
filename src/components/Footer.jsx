@@ -1,7 +1,19 @@
+import { useState } from 'react';
 import { Phone, Mail, MapPin, Globe, MessageCircle, Users, Send, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = ({ company }) => {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    
+    const subject = encodeURIComponent('Newsletter Subscription Request');
+    const body = encodeURIComponent(`I would like to subscribe to the Vaidik Foods newsletter.\n\nEmail: ${newsletterEmail}`);
+    window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <footer id="contact" className="bg-[#0a0a0a] pt-32 pb-12 text-white overflow-hidden relative">
       {/* Decorative top border */}
@@ -47,7 +59,7 @@ const Footer = ({ company }) => {
               <span className="w-8 h-px bg-primary"></span> Quick Links
             </h4>
             <ul className="space-y-5 text-gray-400 text-lg">
-              {['Home', 'About Us', 'Products', 'Contact'].map((item) => (
+              {['Home', 'About Us', 'Selection', 'Contact'].map((item) => (
                 <li key={item}>
                   <a href={`#${item.toLowerCase().split(' ')[0]}`} className="hover:text-white transition-all duration-300 flex items-center gap-2 group">
                     <ArrowRight size={16} className="text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -81,9 +93,9 @@ const Footer = ({ company }) => {
                 <div className="w-12 h-12 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-center shrink-0 group-hover:bg-primary/10 group-hover:border-primary/30 transition-colors">
                   <Mail size={20} className="text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="text-white font-bold mb-1">Email</p>
-                  <p className="text-lg">{company.email}</p>
+                  <p className="text-base break-all">{company.email}</p>
                 </div>
               </li>
               <li className="flex gap-5 group">
@@ -107,14 +119,20 @@ const Footer = ({ company }) => {
             <h4 className="text-xl font-bold mb-10 flex items-center gap-3">
               <span className="w-8 h-px bg-primary"></span> Newsletter
             </h4>
-            <p className="text-gray-400 mb-8 text-lg">Get updates on our new products and offers.</p>
-            <form className="relative group">
+            <p className="text-gray-400 mb-8 text-lg">Get updates on our new arrivals and offers.</p>
+            <form className="relative group" onSubmit={handleNewsletterSubmit}>
               <input 
                 type="email" 
+                required
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Enter your email" 
-                className="w-full bg-[#151515] border border-gray-800 rounded-[24px] py-5 px-8 focus:outline-none focus:border-primary transition-all duration-300 text-white placeholder:text-gray-600"
+                className="w-full bg-[#151515] border border-gray-800 rounded-[24px] py-5 pl-8 pr-28 focus:outline-none focus:border-primary transition-all duration-300 text-white placeholder:text-gray-600"
               />
-              <button className="absolute right-2 top-2 bottom-2 bg-primary px-8 rounded-[18px] hover:bg-primary-light transition-all duration-300 font-bold flex items-center justify-center shadow-lg shadow-primary/20">
+              <button 
+                type="submit"
+                className="absolute right-2 top-2 bottom-2 bg-primary px-8 rounded-[18px] hover:bg-primary-light transition-all duration-300 font-bold flex items-center justify-center shadow-lg shadow-primary/20"
+              >
                 <Send size={20} />
               </button>
             </form>
@@ -137,3 +155,4 @@ const Footer = ({ company }) => {
 };
 
 export default Footer;
+

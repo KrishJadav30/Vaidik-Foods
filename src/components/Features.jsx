@@ -8,7 +8,7 @@ const Features = () => {
   const features = [
     {
       title: "Guaranteed Quality",
-      desc: "We follow high safety standards for every product we make.",
+      desc: "We follow high safety standards for everything we make.",
       icon: <ShieldCheck size={32} className="text-primary" />
     },
     {
@@ -28,7 +28,7 @@ const Features = () => {
     },
     {
       title: "Custom Orders",
-      desc: "We can process and pack products exactly how you need them.",
+      desc: "We can process and pack ingredients exactly how you need them.",
       icon: <Award size={32} className="text-primary" />
     },
     {
