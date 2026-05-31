@@ -56,10 +56,7 @@ const Header = ({ company }) => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
-            <div className="bg-primary w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/20">
-              V
-            </div>
-            <span className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-gray-900'}`}>
+            <span className={`text-2xl font-bold font-display tracking-tight transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-gray-900'}`}>
               {company.name || 'Vaidik Foods'}
             </span>
           </motion.div>

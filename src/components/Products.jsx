@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, ArrowUpRight, ShoppingBag } from 'lucide-react';
+import { ArrowUpRight, ShoppingBag } from 'lucide-react';
 
 const Products = ({ products }) => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState(''); // empty means show all
   
-  const categories = ['All', ...new Set(products.map(p => p.category))];
-  const filteredProducts = activeCategory === 'All' 
-    ? products 
-    : products.filter(p => p.category === activeCategory);
+  // Extract categories dynamically, removing 'All'
+  const categories = [...new Set(products.map(p => p.category))];
+  
+  const filteredProducts = activeCategory 
+    ? products.filter(p => p.category === activeCategory)
+    : products;
 
   return (
     <section id="products" className="section-padding bg-[#f8f9fa] relative overflow-hidden">
@@ -36,7 +38,7 @@ const Products = ({ products }) => {
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => setActiveCategory(activeCategory === cat ? '' : cat)}
               className={`px-8 py-3 rounded-full font-bold transition-all duration-500 border-2 text-sm uppercase tracking-widest ${
                 activeCategory === cat 
                 ? 'bg-primary text-white border-primary shadow-xl shadow-primary/30' 
@@ -89,11 +91,8 @@ const Products = ({ products }) => {
                     <div className="pt-8 border-t border-gray-50 flex items-center justify-between">
                       <div className="flex flex-col">
                         <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-black mb-1">Price</span>
-                        <span className="text-3xl font-black text-gray-900 tracking-tight">{product.price}</span>
+                        <span className="text-3xl font-black text-gray-900 tracking-tight">{product.price || 'Contact for price'}</span>
                       </div>
-                      <button className="bg-gray-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center hover:bg-primary transition-all duration-500 hover:shadow-xl hover:shadow-primary/30 group-hover:rotate-6">
-                        <MessageCircle size={24} />
-                      </button>
                     </div>
                   </div>
                 </motion.div>

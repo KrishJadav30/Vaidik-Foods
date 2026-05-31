@@ -24,12 +24,18 @@ const Hero = ({ company }) => {
 
   return (
     <section id="home" className="pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative bg-[#fdfdfd]">
+      {/* Background Image */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <img src="/images/hero_bg.png" alt="Background" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-[#fdfdfd]"></div>
+      </div>
+      
       {/* Animated Background Elements */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform origin-top pointer-events-none"
+        className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform origin-top pointer-events-none z-0"
       ></motion.div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,7 +112,7 @@ const Hero = ({ company }) => {
             
             <div className="relative rounded-[60px] overflow-hidden shadow-2xl animate-float">
               <img 
-                src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop" 
+                src="/images/hero_main.png" 
                 alt="Vaidik Spices" 
                 className="w-full h-[500px] lg:h-[650px] object-cover hover:scale-110 transition-transform duration-1000"
               />
@@ -119,9 +125,7 @@ const Hero = ({ company }) => {
                 className="absolute bottom-10 left-10 right-10 glass p-8 rounded-[40px] shadow-2xl border-white/50"
               >
                 <div className="flex items-center gap-6">
-                  <div className="p-4 bg-primary/10 rounded-3xl text-primary text-3xl">
-                    <Leaf />
-                  </div>
+                  <img src="/images/farmer_avatar.png" alt="Farmer" className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white" />
                   <div>
                     <p className="font-black text-gray-900 text-xl">Directly from Farmers</p>
                     <p className="text-gray-600">Sustainably sourced, ethically delivered to your doorstep.</p>

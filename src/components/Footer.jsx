@@ -16,10 +16,7 @@ const Footer = ({ company }) => {
             className="col-span-1 lg:col-span-1"
           >
             <div className="flex items-center gap-4 mb-10">
-              <div className="bg-primary w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-primary/20">
-                V
-              </div>
-              <span className="text-3xl font-black tracking-tighter">
+              <span className="text-3xl font-black font-display tracking-tighter">
                 {company.name}
               </span>
             </div>

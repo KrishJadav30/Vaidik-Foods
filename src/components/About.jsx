@@ -65,7 +65,6 @@ const About = ({ company }) => {
             className="lg:w-1/2"
           >
             <motion.div variants={fadeIn} className="mb-10">
-              <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our History</span>
               <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                 Supplying the Best Dried Foods in Mahuva
               </h2>

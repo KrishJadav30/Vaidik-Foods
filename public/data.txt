@@ -1,44 +1,80 @@
 # COMPANY
 [Name] Vaidik Foods
 [Tagline] Pure. Natural. Simple.
-[Phone] +91 98765 43210
+[Phone] +91 9316787170
 [Email] info@vaidikfoods.com
-[Address] 123 Heritage Lane, Mahuva, Gujarat, India - 380020
+[Address] Mahuva, Gujarat, India
 [About] We make and export high-quality dried vegetables and spices. We follow traditional ways and modern safety rules to bring you the best ingredients from India.
 
 # PRODUCTS
-[Name] Dried White Onion Flakes
-[Category] Dried Vegetables
-[Price] ₹380.00/kg
-[Description] Top-quality white onions from Mahuva, dried carefully to keep their natural smell and taste.
-[Image] https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?q=80&w=1000&auto=format&fit=crop
+[Name] Red Onion
+[Category] Onion
+[Price] 
+[Description] High-quality dehydrated red onion.
+[Image] /images/red_onion.png
 ---
-[Name] Red Chilli Powder (Extra Spicy)
-[Category] Spices
-[Price] ₹320.00/kg
-[Description] Finely ground red chilli that is very spicy and has a deep red color. Perfect for all your cooking.
-[Image] https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=1000&auto=format&fit=crop
+[Name] White Onion
+[Category] Onion
+[Price] 
+[Description] Premium dehydrated white onion.
+[Image] /images/white_onion.png
 ---
-[Name] Tomato Powder
-[Category] Fruit Powders
-[Price] ₹520.00/kg
-[Description] 100% natural tomato powder made with advanced drying methods to keep all the nutrients.
-[Image] https://images.unsplash.com/photo-1591189863430-ab87e120f312?q=80&w=1000&auto=format&fit=crop
+[Name] Pink Onion
+[Category] Onion
+[Price] 
+[Description] Carefully dehydrated pink onion flakes.
+[Image] /images/pink_onion.png
 ---
-[Name] Dried Garlic Granules
-[Category] Dried Vegetables
-[Price] ₹460.00/kg
-[Description] Crunchy and aromatic garlic pieces. Great for soups, seasoning, and many other dishes.
-[Image] https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?q=80&w=1000&auto=format&fit=crop
+[Name] Garlic Powder
+[Category] Garlic
+[Price] 
+[Description] Fine dehydrated garlic powder.
+[Image] /images/garlic_powder.png
 ---
-[Name] Turmeric Powder
-[Category] Spices
-[Price] ₹350.00/kg
-[Description] Pure turmeric powder from the best farms. It is healthy and adds great flavor to food.
-[Image] https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1000&auto=format&fit=crop
+[Name] Garlic Flakes
+[Category] Garlic
+[Price] 
+[Description] Dehydrated garlic flakes full of flavor.
+[Image] /images/garlic_flakes.png
 ---
-[Name] Dried Green Chilli Powder
-[Category] Dried Vegetables
-[Price] ₹590.00/kg
-[Description] Strong green chilli powder that adds fresh heat and flavor to any meal.
-[Image] https://images.unsplash.com/photo-1588276552401-30058a0fe57b?q=80&w=1000&auto=format&fit=crop
+[Name] Garlic Granules
+[Category] Garlic
+[Price] 
+[Description] Crunchy dehydrated garlic granules.
+[Image] /images/garlic_granules.png
+---
+[Name] Salem Haldi
+[Category] Premium Spices
+[Price] 
+[Description] Pure Salem turmeric roots.
+[Image] /images/salem_haldi.png
+---
+[Name] Salem Haldi Powder
+[Category] Premium Spices
+[Price] 
+[Description] Freshly ground Salem turmeric powder.
+[Image] /images/salem_haldi_powder.png
+---
+[Name] Kashmiri Regular Mirchi
+[Category] Premium Spices
+[Price] 
+[Description] Vibrant and mildly spicy Kashmiri red chilli.
+[Image] /images/kashmiri_mirchi.png
+---
+[Name] Dhaniya
+[Category] Premium Spices
+[Price] 
+[Description] Aromatic coriander seeds and powder.
+[Image] /images/dhaniya.png
+---
+[Name] Jeeru (EU Grade)
+[Category] Whole spices
+[Price] ₹226/kg
+[Description] Premium EU Grade Cumin seeds.
+[Image] /images/jeeru_eu.png
+---
+[Name] Jeeru (Singapur 99)
+[Category] Whole spices
+[Price] ₹206/kg
+[Description] High-quality Singapur 99 Cumin seeds.
+[Image] /images/jeeru_singapur.png

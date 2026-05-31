@@ -33,11 +33,11 @@ function App() {
       <main className="flex-grow">
         <Hero company={data.company} />
         <About company={data.company} />
-        <Features />
         <Products products={data.products} />
         <Testimonials />
         <Contact company={data.company} />
       </main>
+      <Features />
       <Footer company={data.company} />
       <QuickAction company={data.company} />
     </div>
