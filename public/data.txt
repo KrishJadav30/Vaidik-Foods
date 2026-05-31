@@ -11,70 +11,70 @@
 [Category] Onion
 [Price] 
 [Description] High-quality dehydrated red onion.
-[Image] /images/red_onion.png
+[Image] ./images/red_onion.png
 ---
 [Name] White Onion
 [Category] Onion
 [Price] 
 [Description] Premium dehydrated white onion.
-[Image] /images/white_onion.png
+[Image] ./images/white_onion.png
 ---
 [Name] Pink Onion
 [Category] Onion
 [Price] 
 [Description] Carefully dehydrated pink onion flakes.
-[Image] /images/pink_onion.png
+[Image] ./images/pink_onion.png
 ---
 [Name] Garlic Powder
 [Category] Garlic
 [Price] 
 [Description] Fine dehydrated garlic powder.
-[Image] /images/garlic_powder.png
+[Image] ./images/garlic_powder.png
 ---
 [Name] Garlic Flakes
 [Category] Garlic
 [Price] 
 [Description] Dehydrated garlic flakes full of flavor.
-[Image] /images/garlic_flakes.png
+[Image] ./images/garlic_flakes.png
 ---
 [Name] Garlic Granules
 [Category] Garlic
 [Price] 
 [Description] Crunchy dehydrated garlic granules.
-[Image] /images/garlic_granules.png
+[Image] ./images/garlic_granules.png
 ---
 [Name] Salem Haldi
 [Category] Premium Spices
 [Price] 
 [Description] Pure Salem turmeric roots.
-[Image] /images/salem_haldi.png
+[Image] ./images/salem_haldi.png
 ---
 [Name] Salem Haldi Powder
 [Category] Premium Spices
 [Price] 
 [Description] Freshly ground Salem turmeric powder.
-[Image] /images/salem_haldi_powder.png
+[Image] ./images/salem_haldi_powder.png
 ---
 [Name] Kashmiri Regular Mirchi
 [Category] Premium Spices
 [Price] 
 [Description] Vibrant and mildly spicy Kashmiri red chilli.
-[Image] /images/kashmiri_mirchi.png
+[Image] ./images/kashmiri_mirchi.png
 ---
 [Name] Dhaniya
 [Category] Premium Spices
 [Price] 
 [Description] Aromatic coriander seeds and powder.
-[Image] /images/dhaniya.png
+[Image] ./images/dhaniya.png
 ---
 [Name] Jeeru (EU Grade)
 [Category] Whole spices
 [Price] ₹226/kg
 [Description] Premium EU Grade Cumin seeds.
-[Image] /images/jeeru_eu.png
+[Image] ./images/jeeru_eu.png
 ---
 [Name] Jeeru (Singapur 99)
 [Category] Whole spices
 [Price] ₹206/kg
 [Description] High-quality Singapur 99 Cumin seeds.
-[Image] /images/jeeru_singapur.png
+[Image] ./images/jeeru_singapur.png
