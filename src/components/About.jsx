@@ -27,8 +27,8 @@ const About = ({ company }) => {
               <div className="space-y-6 pt-12">
                 <motion.img 
                   variants={fadeIn}
-                  src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=500&auto=format&fit=crop" 
-                  alt="Processing" 
+                  src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?q=80&w=1000&auto=format&fit=crop" 
+                  alt="Spices and Herbs" 
                   className="rounded-[40px] shadow-2xl w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />

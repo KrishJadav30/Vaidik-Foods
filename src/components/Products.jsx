@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, ShoppingBag } from 'lucide-react';
+import { ArrowUpRight, ShoppingBag, MousePointerClick } from 'lucide-react';
 
 const WhatsAppIcon = ({ className }) => (
   <svg 
@@ -13,16 +13,16 @@ const WhatsAppIcon = ({ className }) => (
 );
 
 const Products = ({ products, company }) => {
-  const [activeCategory, setActiveCategory] = useState(''); // empty means show all
+  const [activeCategory, setActiveCategory] = useState(null); // null means no category selected, hide all
   
   const whatsappNumber = company.phone ? company.phone.replace(/[^0-9]/g, '') : '919316787170';
   
-  // Extract categories dynamically, removing 'All'
+  // Extract categories dynamically
   const categories = [...new Set(products.map(p => p.category))];
   
-  const filteredProducts = activeCategory 
-    ? products.filter(p => p.category === activeCategory)
-    : products;
+  const filteredProducts = activeCategory === 'All' 
+    ? products 
+    : products.filter(p => p.category === activeCategory);
 
   return (
     <section id="products" className="section-padding bg-[#f8f9fa] relative overflow-hidden">
@@ -31,13 +31,18 @@ const Products = ({ products, company }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20 motion-gpu"
+          className="text-center mb-16 motion-gpu"
         >
           <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Products</span>
           <h3 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">High-Quality Ingredients</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-10">
             Cleanly made and packed to keep the natural taste. We deliver the best farm products to your door.
           </p>
+          
+          <div className="flex items-center justify-center gap-2 text-primary/60 font-bold uppercase tracking-[0.2em] text-[10px] mb-6 animate-pulse">
+            <MousePointerClick size={14} />
+            Click a category to view products
+          </div>
         </motion.div>
 
         {/* Category Filter */}
@@ -47,10 +52,20 @@ const Products = ({ products, company }) => {
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-4 mb-16 motion-gpu"
         >
+          <button
+            onClick={() => setActiveCategory(activeCategory === 'All' ? null : 'All')}
+            className={`px-8 py-3 rounded-full font-bold transition-all duration-300 border-2 text-sm uppercase tracking-widest ${
+              activeCategory === 'All' 
+              ? 'bg-primary text-white border-primary shadow-xl shadow-primary/30' 
+              : 'bg-white text-gray-500 border-gray-100 hover:border-primary hover:text-primary shadow-sm'
+            }`}
+          >
+            All
+          </button>
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(activeCategory === cat ? '' : cat)}
+              onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
               className={`px-8 py-3 rounded-full font-bold transition-all duration-300 border-2 text-sm uppercase tracking-widest ${
                 activeCategory === cat 
                 ? 'bg-primary text-white border-primary shadow-xl shadow-primary/30' 
@@ -67,7 +82,7 @@ const Products = ({ products, company }) => {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           <AnimatePresence mode='popLayout'>
-            {filteredProducts.length > 0 ? (
+            {activeCategory && filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <motion.div 
                   key={product.name}
@@ -115,6 +130,17 @@ const Products = ({ products, company }) => {
                   </div>
                 </motion.div>
               ))
+            ) : !activeCategory ? (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="col-span-full py-20 text-center"
+              >
+                <div className="bg-white/40 backdrop-blur-sm rounded-[48px] p-16 border-2 border-dashed border-primary/10 max-w-lg mx-auto">
+                  <ShoppingBag size={48} className="mx-auto text-primary/20 mb-6" />
+                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">Select a category to explore our collection</p>
+                </div>
+              </motion.div>
             ) : (
               <motion.div 
                 initial={{ opacity: 0 }}
@@ -123,7 +149,7 @@ const Products = ({ products, company }) => {
               >
                 <div className="bg-gray-50 rounded-[40px] p-12 border-2 border-dashed border-gray-100">
                   <ShoppingBag size={48} className="mx-auto text-gray-200 mb-4" />
-                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">No products here yet</p>
+                  <p className="text-gray-400 font-bold text-xl uppercase tracking-widest">No products found in this category</p>
                 </div>
               </motion.div>
             )}

@@ -1,6 +1,6 @@
 # COMPANY
 [Name] Vaidik Foods
-[Tagline] Pure. Natural. Simple.
+[Tagline] Pure Natural Simple
 [Phone] +91 9316787170
 [Email] info@vaidikfoods.com
 [Address] Mahuva, Gujarat, India

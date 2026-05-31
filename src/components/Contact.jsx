@@ -13,10 +13,7 @@ const Contact = ({ company }) => {
             className="lg:w-2/5"
           >
             <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Contact Us</span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">How Can We Help?</h2>
-            <p className="text-gray-600 text-xl leading-relaxed mb-12">
-              Whether you need a large order or special processing, we are here to help you.
-            </p>
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">Get in touch</h2>
             
             <div className="space-y-8">
               {[
