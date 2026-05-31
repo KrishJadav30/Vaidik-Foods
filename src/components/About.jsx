@@ -66,7 +66,7 @@ const About = ({ company }) => {
           >
             <motion.div variants={fadeIn} className="mb-10">
               <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Supplying the Best Dried Foods in Mahuva
+                Supplying the Best Dried Foods
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed italic border-l-4 border-primary pl-8 py-4 bg-primary/5 rounded-r-[32px]">
                 "{company.about || 'We offer the best farm products made with modern machines while keeping our traditional ways.'}"
