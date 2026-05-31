@@ -3,12 +3,12 @@ import { History, Globe2, Users2 } from 'lucide-react';
 
 const About = ({ company }) => {
   const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
   const stagger = {
-    visible: { transition: { staggerChildren: 0.1 } }
+    visible: { transition: { staggerChildren: 0.05 } }
   };
 
   return (
@@ -20,7 +20,7 @@ const About = ({ company }) => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
-            className="lg:w-1/2 relative"
+            className="lg:w-1/2 relative motion-gpu"
           >
             <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="grid grid-cols-2 gap-6">
@@ -30,6 +30,7 @@ const About = ({ company }) => {
                   src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=500&auto=format&fit=crop" 
                   alt="Processing" 
                   className="rounded-[40px] shadow-2xl w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
                 <motion.div 
                   variants={fadeIn}
@@ -52,6 +53,7 @@ const About = ({ company }) => {
                   src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=500&auto=format&fit=crop" 
                   alt="Farm" 
                   className="rounded-[40px] shadow-2xl w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -62,7 +64,7 @@ const About = ({ company }) => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
-            className="lg:w-1/2"
+            className="lg:w-1/2 motion-gpu"
           >
             <motion.div variants={fadeIn} className="mb-10">
               <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">

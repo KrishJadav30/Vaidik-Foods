@@ -31,7 +31,7 @@ const Products = ({ products, company }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-20 motion-gpu"
         >
           <span className="inline-block text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Products</span>
           <h3 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8">High-Quality Ingredients</h3>
@@ -45,13 +45,13 @@ const Products = ({ products, company }) => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-16"
+          className="flex flex-wrap justify-center gap-4 mb-16 motion-gpu"
         >
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(activeCategory === cat ? '' : cat)}
-              className={`px-8 py-3 rounded-full font-bold transition-all duration-500 border-2 text-sm uppercase tracking-widest ${
+              className={`px-8 py-3 rounded-full font-bold transition-all duration-300 border-2 text-sm uppercase tracking-widest ${
                 activeCategory === cat 
                 ? 'bg-primary text-white border-primary shadow-xl shadow-primary/30' 
                 : 'bg-white text-gray-500 border-gray-100 hover:border-primary hover:text-primary shadow-sm'
@@ -72,17 +72,18 @@ const Products = ({ products, company }) => {
                 <motion.div 
                   key={product.name}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="group bg-white rounded-[48px] overflow-hidden border border-gray-100 hover:border-primary/20 transition-all duration-500 hover:shadow-premium flex flex-col h-full"
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="group bg-white rounded-[48px] overflow-hidden border border-gray-100 hover:border-primary/20 transition-all duration-300 hover:shadow-premium flex flex-col h-full motion-gpu"
                 >
                   <div className="relative h-80 overflow-hidden m-4 rounded-[40px]">
                     <img 
                       src={product.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop'} 
                       alt={product.name} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
                     />
                     <div className="absolute top-6 right-6 glass px-5 py-2 rounded-full text-[10px] font-black text-primary shadow-sm uppercase tracking-[0.2em]">
                       {product.category}

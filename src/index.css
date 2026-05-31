@@ -41,11 +41,28 @@
     height: 100%;
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply font-sans bg-[#fdfdfd] text-[#2d3436] leading-relaxed overflow-x-hidden;
     min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+    content-visibility: auto;
+  }
+
+  /* Optimize animations for GPU */
+  .motion-gpu {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, opacity;
   }
 
   #root {

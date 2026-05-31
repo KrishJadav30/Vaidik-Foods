@@ -14,11 +14,11 @@ const Hero = ({ company }) => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
@@ -26,16 +26,16 @@ const Hero = ({ company }) => {
     <section id="home" className="pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative bg-[#fdfdfd]">
       {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <img src="./images/hero_bg.png" alt="Background" className="w-full h-full object-cover opacity-30" />
+        <img src="./images/hero_bg.png" alt="Background" className="w-full h-full object-cover opacity-30" loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-[#fdfdfd]"></div>
       </div>
       
       {/* Animated Background Elements */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="hidden md:block absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform origin-top pointer-events-none z-0"
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="hidden md:block absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform origin-top pointer-events-none z-0 motion-gpu"
       ></motion.div>
       <div className="md:hidden absolute top-0 right-0 w-full h-[500px] bg-gradient-to-bl from-primary/10 via-primary/5 to-transparent blur-2xl pointer-events-none z-0"></div>
       
@@ -45,7 +45,7 @@ const Hero = ({ company }) => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center lg:text-left relative z-10"
+            className="text-center lg:text-left relative z-10 motion-gpu"
           >
             <motion.span 
               variants={itemVariants}
@@ -105,28 +105,29 @@ const Hero = ({ company }) => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-            className="relative group"
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            className="relative group motion-gpu"
           >
             {/* Image Glow */}
             <div className="absolute -inset-10 bg-primary/10 rounded-full blur-[100px] group-hover:bg-primary/20 transition-all duration-700 animate-pulse"></div>
             
-            <div className="relative rounded-[60px] overflow-hidden shadow-2xl animate-float">
+            <div className="relative rounded-[60px] overflow-hidden shadow-2xl">
               <img 
                 src="./images/hero_main.png" 
                 alt="Vaidik Spices" 
-                className="w-full h-[500px] lg:h-[650px] object-cover hover:scale-110 transition-transform duration-1000"
+                className="w-full h-[500px] lg:h-[650px] object-cover hover:scale-105 transition-transform duration-700"
+                loading="eager"
               />
               
               {/* Floating Badge */}
               <motion.div 
-                initial={{ x: 50, opacity: 0 }}
+                initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-                className="absolute bottom-10 left-10 right-10 glass p-8 rounded-[40px] shadow-2xl border-white/50"
+                transition={{ delay: 0.8, duration: 0.5 }}
+                className="absolute bottom-10 left-10 right-10 glass p-8 rounded-[40px] shadow-2xl border-white/50 motion-gpu"
               >
                 <div className="flex items-center gap-6">
-                  <img src="./images/farmer_avatar.png" alt="Farmer" className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white" />
+                  <img src="./images/farmer_avatar.png" alt="Farmer" className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white" loading="lazy" />
                   <div>
                     <p className="font-black text-gray-900 text-xl">Directly from Farmers</p>
                     <p className="text-gray-600">Sustainably sourced, ethically delivered to your doorstep.</p>
@@ -138,7 +139,7 @@ const Hero = ({ company }) => {
             {/* Decorative Elements */}
             <motion.div 
               animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
               className="absolute -top-10 -right-10 w-32 h-32 border-4 border-dashed border-primary/20 rounded-full"
             ></motion.div>
           </motion.div>
