@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, ShoppingBag, MousePointerClick } from 'lucide-react';
+import { ArrowUpRight, ShoppingBag, MousePointerClick, IndianRupee } from 'lucide-react';
 
 const WhatsAppIcon = ({ className }) => (
   <svg 
@@ -162,12 +162,20 @@ const Products = ({ products, company }) => {
                   </div>
                   
                   <div className="p-10 flex flex-col flex-grow">
-                    <div className="flex justify-between items-start mb-4">
+                    <div className="flex justify-between items-start mb-2">
                       <h4 className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors pr-4">
                         {product.name}
                       </h4>
                       <ArrowUpRight className="text-gray-300 group-hover:text-primary transition-colors shrink-0" />
                     </div>
+
+                    {/* NEW PRICE BLOCK ADDED HERE */}
+                    {product.price && product.price.trim() !== '' && (
+                      <div className="flex items-center gap-1.5 mb-4 text-primary font-bold text-lg bg-primary/5 w-fit px-3 py-1 rounded-lg">
+                        <span>{product.price}</span>
+                      </div>
+                    )}
+
                     <p className="text-gray-500 mb-8 flex-grow leading-relaxed">
                       {product.description}
                     </p>
